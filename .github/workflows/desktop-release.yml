@@ -1,0 +1,54 @@
+name: Build Windows demo
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['desktop/**', 'site/**', 'docs/**', '.github/workflows/desktop-release.yml']
+permissions:
+  contents: write
+concurrency:
+  group: windows-demo-release
+  cancel-in-progress: false
+jobs:
+  package:
+    if: github.repository == 'ilovemiku520/zhidou-hackathon-demo'
+    runs-on: windows-latest
+    timeout-minutes: 15
+    env:
+      ZHIDOU_DESKTOP_OUTPUT: ${{ runner.temp }}/知斗demo演示文件
+      ZHIDOU_DESKTOP_CORE: ${{ runner.temp }}/知斗demo演示文件/core.mjs
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22.17.1'
+          cache: npm
+          cache-dependency-path: desktop/package-lock.json
+      - name: Install build tool
+        run: npm ci --prefix desktop
+      - name: Build portable client
+        run: node desktop/build.mjs
+      - name: Verify local rules
+        run: node --disable-warning=ExperimentalWarning desktop/test.mjs
+      - name: Package clean demo
+        shell: pwsh
+        run: |
+          Copy-Item -LiteralPath 'docs/产品说明计划书.md' -Destination "$env:ZHIDOU_DESKTOP_OUTPUT/产品说明计划书.md"
+          Copy-Item -LiteralPath 'docs/知斗产品说明计划书.docx' -Destination "$env:ZHIDOU_DESKTOP_OUTPUT/知斗产品说明计划书.docx"
+          Copy-Item -LiteralPath 'docs/暗黑看山降临机制.md' -Destination "$env:ZHIDOU_DESKTOP_OUTPUT/暗黑看山降临机制.md"
+          Compress-Archive -Path "$env:ZHIDOU_DESKTOP_OUTPUT" -DestinationPath "$env:RUNNER_TEMP/知斗demo演示文件.zip"
+          (Get-FileHash -LiteralPath "$env:RUNNER_TEMP/知斗demo演示文件.zip" -Algorithm SHA256).Hash.ToLower() + '  知斗demo演示文件.zip' | Set-Content -LiteralPath "$env:RUNNER_TEMP/SHA256SUMS.txt" -Encoding utf8
+      - name: Publish downloadable demo
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view desktop-v0.7.0 --repo $env:GITHUB_REPOSITORY 2>$null
+          if ($LASTEXITCODE -ne 0) {
+            gh release create desktop-v0.7.0 --repo $env:GITHUB_REPOSITORY --target $env:GITHUB_SHA --title '知斗 0.7.0 · Windows桌面演示包' --notes-file desktop/release-notes.md
+            if ($LASTEXITCODE -ne 0) { throw 'Could not create release' }
+          }
+          gh release upload desktop-v0.7.0 "$env:RUNNER_TEMP/知斗demo演示文件.zip" "$env:RUNNER_TEMP/SHA256SUMS.txt" 'docs/知斗产品说明计划书.docx' --repo $env:GITHUB_REPOSITORY --clobber
+          if ($LASTEXITCODE -ne 0) { throw 'Could not upload release assets' }

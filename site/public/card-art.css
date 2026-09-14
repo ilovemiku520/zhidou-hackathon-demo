@@ -1,0 +1,150 @@
+/* Illustrated cards retain readable gameplay labels and a fixed hand footprint. */
+.hub-nav>#art-gallery{margin-left:auto;margin-right:24px;white-space:nowrap}
+.role-emblem{width:29px;height:29px;border:1px solid #809b9677;border-radius:50%;overflow:hidden}
+.team-portrait{width:100%;height:100%;object-fit:cover;object-position:50% 43%;transform:scale(1.8)}
+.battle-lobby .role-card{padding:0 18px 15px;overflow:hidden}
+.lobby-art{display:block;position:relative;width:calc(100% + 36px);margin:0 -18px 12px;height:180px;overflow:hidden;text-align:left}
+.lobby-portrait{width:100%;height:100%;object-fit:cover;object-position:50% 45%;transition:transform .2s}
+.lobby-art::after{content:'';position:absolute;inset:55% 0 0;background:linear-gradient(transparent,#15232c)}
+.lobby-art>span{position:absolute;right:12px;bottom:9px;z-index:1;font-size:10px;color:#e1ece4}
+.lobby-art:hover .lobby-portrait{transform:scale(1.03)}
+.battle-lobby .role-kind{top:12px;right:12px;z-index:1;padding:3px 9px;border-radius:5px;background:#101c27d9;border:1px solid #7d938666;pointer-events:none}
+.battle-lobby .role-card h3{margin-top:0}
+.battle-lobby .lobby-role-stats{margin-top:10px}
+.battle-board .play-card,.battle-board .play-card.chosen{height:224px;padding:10px 11px 40px;background:#14232c;isolation:isolate}
+.battle-board .play-card .card-art.illustration{position:absolute;inset:0 0 auto;width:100%;height:108px;margin:0;z-index:-1;border-radius:8px 8px 0 0;overflow:hidden;opacity:1}
+.card-art.illustration::after{inset:0;width:auto;height:auto;background:linear-gradient(#09172360,transparent 34%,#14232c 99%);opacity:1}
+.skill-illustration{width:100%;height:100%;object-fit:cover;object-position:50% 48%;display:block;transition:transform .18s}
+.play-card:hover .skill-illustration{transform:scale(1.035)}
+.battle-board .play-card .card-top{position:absolute;left:9px;right:9px;top:8px;z-index:1;color:white;text-shadow:0 1px 4px #000}
+.card-top>span{padding:3px 5px;background:#0d1d2bae;border-radius:3px;max-width:70%;white-space:nowrap}
+.play-card .card-cost{padding:4px 5px;border-radius:5px;background:#0c1928db;border:1px solid #9ea27d77;text-shadow:none}
+.battle-board .play-card>strong{margin:75px 0 6px;font-size:14px;line-height:1.4;position:relative;z-index:1;flex-shrink:0;text-shadow:0 1px 6px #09131c}
+.battle-board .play-card .card-rule{font-size:11px;line-height:1.65;position:relative;z-index:1;-webkit-line-clamp:4;flex:0 0 auto}
+.battle-board .play-card.chosen{border-width:1px;box-shadow:inset 0 0 0 1px #96d6c0,0 0 0 2px #96d6c033}
+.chosen .card-check{top:45px;z-index:2;box-shadow:0 2px 8px #091c27}
+.play-card.unavailable .skill-illustration{filter:saturate(.35) brightness(.7)}
+.play-card.unavailable .card-art.illustration{opacity:1}
+.chosen-slot .slot-art{width:30px;height:34px;overflow:hidden;border-radius:4px;border:1px solid #88ad9166}
+.slot-portrait{width:100%;height:100%;object-fit:cover;object-position:center}
+.card-detail{color:#b5cfd0}
+#combat-dialog[data-kind=gallery],#combat-dialog[data-kind=art-card]{width:min(1080px,calc(100vw - 40px));max-width:1080px}
+.art-role-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0 20px}
+.art-role-tabs button{display:flex;align-items:center;gap:10px;border:1px solid #3d525a;border-radius:8px;padding:8px;background:#172630;text-align:left}
+.art-role-tabs button.active{border-color:var(--role-color);background:color-mix(in srgb,var(--role-tint) 45%,#15232d)}
+.art-role-tabs button>span{display:flex;flex-direction:column;font-size:14px}
+.art-role-tabs small{font-size:10px;margin-top:3px;color:#a4b6bd}
+.tab-portrait{height:43px;width:35px;object-fit:cover;object-position:50% 43%;border-radius:5px}
+.art-gallery-role{display:grid;grid-template-columns:190px minmax(0,1fr);gap:25px;align-items:center;margin-bottom:24px}
+.art-gallery-role figure,.illustrated-card-detail figure{margin:0}
+.gallery-hero{display:block;width:100%;aspect-ratio:2/3;object-fit:contain;border-radius:8px;box-shadow:0 10px 30px #0003}
+.art-gallery-role h3{font-size:30px;margin:8px 0 14px}
+.art-gallery-role p{color:#c4d0ce;line-height:1.9;max-width:530px;margin-bottom:15px;font-size:13px}
+.art-gallery-role p.subtle{color:#879fa9;font-size:11px}
+.gallery-stats{font-size:12px;border-top:1px solid #445651;padding-top:16px;color:#cddad7}
+.art-gallery-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.gallery-skill{display:flex;flex-direction:column;overflow:hidden;border:1px solid #43575d;border-radius:9px;background:#182a33;padding:0;text-align:left;transition:transform .15s,border-color .15s}
+.gallery-skill:hover{border-color:var(--role-color);transform:translateY(-3px)}
+.gallery-card-art{width:100%;aspect-ratio:2/3;object-fit:cover;display:block}
+.gallery-card-label{display:flex;flex-direction:column;gap:5px;padding:12px 10px}
+.gallery-card-label>small{font-size:9px;color:#9ab1b8}
+.gallery-card-label>b{font-size:13px;color:#ecf0e7}
+.gallery-card-label>span{font-size:9px;color:var(--role-color)}
+.illustrated-card-detail{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:30px;margin:20px 0;align-items:center}
+.full-illustration{display:block;width:100%;max-height:65vh;object-fit:contain;border-radius:8px}
+.illustrated-card-detail h3{font-size:29px;margin:10px 0 15px;color:#edf2e9}
+.detail-fee{color:var(--role-color);font-size:17px;margin-bottom:20px}
+.detail-fee>span{display:block;font-size:11px;margin-top:5px;color:#9fb1be}
+.illustrated-card-detail .full-card-rule{font-size:16px;line-height:1.9;border-top:1px solid #48616a;padding-top:18px;margin-bottom:18px}
+.illustration-caption{font-size:11px;line-height:1.9;color:#8fa6b1;border-top:1px solid #35494d;padding-top:16px;margin:22px 0}
+.team-detail-portraits{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:18px 0}
+.team-detail-portraits button{position:relative;padding:0;overflow:hidden;border-radius:8px;border:1px solid #536961}
+.team-detail-portraits img{display:block;width:100%;height:180px;object-fit:cover;object-position:50% 42%}
+.team-detail-portraits span{display:block;background:#1a2e36;padding:8px;font-size:12px;color:#c7d8d2}
+@media(min-width:1101px) and (max-height:820px){
+  .combat-teams{padding-top:8px;padding-bottom:8px}
+  .selection-stage{min-height:60px}
+}
+@media(max-width:1100px){
+  .hub-nav>#art-gallery{margin-right:15px;font-size:11px}
+  .combat-tools{gap:12px}
+  .art-gallery-grid{gap:10px}
+  .battle-board .play-card>strong{font-size:13px}
+}
+@media(max-width:900px){
+  .battle-board .play-card,.battle-board .play-card.chosen{height:249px}
+  .battle-board .play-card .card-art.illustration{height:132px}
+  .battle-board .play-card>strong{margin-top:100px;font-size:16px}
+  .battle-board .play-card .card-rule{font-size:12px}
+}
+@media(max-width:640px){
+  .hub-nav>#art-gallery,.battle-mode .hub-nav>#art-gallery{margin:0;align-self:flex-end;font-size:10px;padding:8px 0}
+  .battle-mode .hub-nav{flex-wrap:wrap}
+  .battle-mode.in-match .hub-nav>#art-gallery{display:none}
+  .battle-lobby .role-card{padding:0 12px 14px}
+  .lobby-art{height:170px;width:calc(100% + 24px);margin:0 -12px 10px}
+  .battle-board .play-card,.battle-board .play-card.chosen{height:238px;padding:10px 10px 39px}
+  .battle-board .play-card .card-art.illustration{height:118px}
+  .battle-board .play-card>strong{margin-top:87px;font-size:14px}
+  .battle-board .play-card .card-rule{font-size:11px}
+  .role-emblem{width:21px;height:21px}
+  .combat-tools{gap:19px}
+  .art-role-tabs{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .art-role-tabs button>span{font-size:12px}
+  .art-gallery-role{grid-template-columns:105px minmax(0,1fr);gap:16px}
+  .art-gallery-role h3{font-size:23px;margin:4px 0 10px}
+  .art-gallery-role p{font-size:11px;line-height:1.8;margin-bottom:9px}
+  .art-gallery-role .subtle{font-size:9px}
+  .gallery-stats{font-size:10px;padding-top:9px}
+  .art-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .gallery-card-label{padding:10px}
+  .gallery-card-label>b{font-size:12px}
+  .illustrated-card-detail{grid-template-columns:1fr;gap:22px}
+  .full-illustration{max-height:58vh}
+  .illustrated-card-detail h3{font-size:25px}
+  .illustrated-card-detail .full-card-rule{font-size:14px}
+  #combat-dialog[data-kind=gallery],#combat-dialog[data-kind=art-card]{width:calc(100vw - 20px);padding:16px}
+  .team-detail-portraits img{height:155px}
+}
+@media(prefers-reduced-motion:reduce){.lobby-portrait,.skill-illustration,.gallery-skill{transition:none}}
+
+/* Minimal line symbols match the original four profession emblems. */
+.team-portrait{transform:none;object-fit:cover;object-position:center}
+.lobby-art{height:96px;background:#14232c;border-bottom:1px solid #43554b55}
+.lobby-art::after{display:none}.lobby-art>span{font-size:9px;color:#8fa7a0}
+.lobby-portrait{object-fit:contain;transform:scale(1.4)}.lobby-art:hover .lobby-portrait{transform:scale(1.45)}
+.battle-board .play-card .card-art.illustration{height:100px}.skill-illustration{object-position:50% 44%;object-fit:cover}
+.card-art.illustration::after{background:linear-gradient(transparent 65%,#14232c)}
+.battle-board .play-card>strong{margin-top:70px;font-size:15px;text-shadow:none}
+.battle-board .play-card .card-top{color:var(--role-color);text-shadow:none}.card-top>span{background:transparent;padding-left:0}
+.battle-board .play-card .card-rule{color:#c6d6d8}.tab-portrait{object-fit:cover}
+.gallery-hero{max-height:200px;box-shadow:none}.art-gallery-role{grid-template-columns:130px 1fr;gap:22px}
+.gallery-card-art{height:120px;aspect-ratio:auto;object-position:50% 44%;object-fit:cover}.full-illustration{max-height:380px}
+.illustration-caption{display:none}.team-detail-portraits img{object-fit:contain;height:110px}
+.last-exchange{margin:0 18px 8px;font-size:10px;color:#9abdb5}
+.battle-board[data-phase=reveal] .reveal-banner{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:14px 18px 18px;margin:0;min-height:300px;border-bottom:0;background:#102029}
+.reveal-heading{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;color:#d3e8df;font-size:15px}.reveal-heading small{font-size:11px;color:#a0b8b5}
+.battle-board[data-phase=reveal] .impact-summary{grid-column:1/-1;grid-row:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border:1px solid #40564f;border-radius:8px;background:#223c3338;text-align:left}
+.impact-summary>b{font-size:19px}.impact-summary>small{font-size:11px;color:#a5b9b6}
+.battle-board[data-phase=reveal] .revealed-side{text-align:left;min-width:0;border:1px solid #354e51;border-radius:10px;padding:14px;background:#152831}
+.battle-board[data-phase=reveal] .foe-play{border-color:#665749}.revealed-side header{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:12px}.revealed-side header b{font-size:13px;color:#d0dfdc}.revealed-side header span{font-size:10px;color:#8fa6ab}
+.revealed-deck{display:flex;flex-direction:column;gap:8px}.battle-board .revealed-card{display:flex;align-items:center;width:100%;gap:12px;padding:9px 12px;background:#0e1d25;border:1px solid #41535a;border-radius:8px;text-align:left;white-space:normal}
+.revealed-card img{width:48px;height:54px;object-fit:cover;flex-shrink:0}.revealed-card-body{display:flex;flex-direction:column;gap:4px}.revealed-card-body small{font-size:9px;color:#91a7ad}.revealed-card-body b{font-size:14px;color:var(--role-color)}.revealed-card-body>span{font-size:11px;color:#c2d0d2;line-height:1.7}
+.revealed-card:hover{border-color:var(--role-color)}.revealed-side .pass-label{display:block;padding:25px 14px;text-align:center;color:#8da4a5;font-size:13px}.pass-label small{font-size:10px}
+.battle-board[data-phase=reveal] .battle-controls{position:sticky;bottom:0}.battle-board[data-phase=reveal] .board-footnote{display:none}
+@media(max-width:640px){
+ .lobby-art{height:86px}.battle-board .play-card>strong{margin-top:70px;font-size:15px}.battle-board .play-card,.battle-board .play-card.chosen{height:222px}
+ .gallery-card-art{height:100px}.art-gallery-role{grid-template-columns:80px 1fr;gap:12px}.art-gallery-role h3{font-size:21px}.gallery-hero{max-height:150px}
+ .battle-board[data-phase=reveal] .reveal-banner{grid-template-columns:1fr;padding:12px 10px;gap:10px;min-height:0}.reveal-heading{flex-direction:column;align-items:flex-start;gap:5px;font-size:14px}
+ .battle-board[data-phase=reveal] .impact-summary{flex-wrap:wrap;padding:10px;gap:5px}.impact-summary>b{font-size:16px}.impact-summary>small{display:block;order:3;width:100%;font-size:10px}
+ .battle-board[data-phase=reveal] .revealed-side{padding:10px}.revealed-side header{margin-bottom:8px}.revealed-card img{width:37px;height:43px}.battle-board .revealed-card{padding:8px;gap:9px}.revealed-card-body>b{font-size:13px}.revealed-card-body>span{font-size:11px}.reveal-heading small{font-size:10px}
+ .battle-board[data-phase=reveal] .combat-teams{padding-top:5px;padding-bottom:5px}.battle-board[data-phase=reveal] .combat-team .combat-states{display:none}
+}
+
+/* Liu Kanshan mascot silhouettes, with readable faces at small sizes. */
+.lobby-portrait{transform:scale(1.7);object-position:center}.lobby-art:hover .lobby-portrait{transform:scale(1.74)}
+.team-portrait{object-fit:cover;transform:scale(1.65);object-position:50% 34%}
+.skill-illustration,.gallery-card-art{object-fit:contain;transform:scale(1.55);object-position:center}.play-card:hover .skill-illustration{transform:scale(1.59)}
+.tab-portrait{object-fit:cover;object-position:50% 39%}.revealed-card img,.slot-portrait{object-fit:cover;object-position:50% 42%}
+.gallery-skill{isolation:isolate}.gallery-card-label{z-index:1;background:#182a33}.gallery-card-art{transform:scale(1.45);transform-origin:50% 66%}
+.history-event>small{display:block;color:#94afb5;font-size:10px;margin:8px 0}

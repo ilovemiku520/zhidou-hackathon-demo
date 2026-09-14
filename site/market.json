@@ -1,0 +1,27 @@
+{
+  "version": "market-demo-v1",
+  "reference_rate": "100",
+  "reversion_k": "0.03",
+  "noise": [
+    {"basis_points": -300, "weight": 3},
+    {"basis_points": -150, "weight": 12},
+    {"basis_points": -60, "weight": 30},
+    {"basis_points": 0, "weight": 10},
+    {"basis_points": 60, "weight": 30},
+    {"basis_points": 150, "weight": 12},
+    {"basis_points": 300, "weight": 3}
+  ],
+  "buy_fee_bps": 100,
+  "sell_fee_bps": 100,
+  "min_qty": 1,
+  "max_qty": 50,
+  "daily_buy_cap": 100,
+  "daily_sell_cap": 100,
+  "global_daily_cap": 2000,
+  "initial_user_soft_cents": 2000000,
+  "initial_user_fish": 100,
+  "initial_treasury_soft_cents": 100000000,
+  "initial_treasury_fish": 10000,
+  "history_days": 7,
+  "seed_demo_history": true
+}
