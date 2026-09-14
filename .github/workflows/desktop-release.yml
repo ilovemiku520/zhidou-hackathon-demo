@@ -40,8 +40,9 @@ jobs:
           Copy-Item -LiteralPath 'docs/产品说明计划书.md' -Destination "$env:ZHIDOU_DESKTOP_OUTPUT/产品说明计划书.md"
           Copy-Item -LiteralPath 'docs/知斗产品说明计划书.docx' -Destination "$env:ZHIDOU_DESKTOP_OUTPUT/知斗产品说明计划书.docx"
           Copy-Item -LiteralPath 'docs/暗黑看山降临机制.md' -Destination "$env:ZHIDOU_DESKTOP_OUTPUT/暗黑看山降临机制.md"
-          Compress-Archive -Path "$env:ZHIDOU_DESKTOP_OUTPUT" -DestinationPath "$env:RUNNER_TEMP/知斗demo演示文件.zip"
-          (Get-FileHash -LiteralPath "$env:RUNNER_TEMP/知斗demo演示文件.zip" -Algorithm SHA256).Hash.ToLower() + '  知斗demo演示文件.zip' | Set-Content -LiteralPath "$env:RUNNER_TEMP/SHA256SUMS.txt" -Encoding utf8
+          Compress-Archive -Path "$env:ZHIDOU_DESKTOP_OUTPUT" -DestinationPath "$env:RUNNER_TEMP/zhidou-demo-windows-x64.zip"
+          Copy-Item -LiteralPath 'docs/知斗产品说明计划书.docx' -Destination "$env:RUNNER_TEMP/zhidou-product-plan.docx"
+          (Get-FileHash -LiteralPath "$env:RUNNER_TEMP/zhidou-demo-windows-x64.zip" -Algorithm SHA256).Hash.ToLower() + '  zhidou-demo-windows-x64.zip' | Set-Content -LiteralPath "$env:RUNNER_TEMP/SHA256SUMS.txt" -Encoding utf8
       - name: Publish downloadable demo
         shell: pwsh
         env:
@@ -52,5 +53,15 @@ jobs:
             gh release create desktop-v0.7.0 --repo $env:GITHUB_REPOSITORY --target $env:GITHUB_SHA --title '知斗 0.7.0 · Windows桌面演示包' --notes-file desktop/release-notes.md
             if ($LASTEXITCODE -ne 0) { throw 'Could not create release' }
           }
-          gh release upload desktop-v0.7.0 "$env:RUNNER_TEMP/知斗demo演示文件.zip" "$env:RUNNER_TEMP/SHA256SUMS.txt" 'docs/知斗产品说明计划书.docx' --repo $env:GITHUB_REPOSITORY --clobber
+          gh release upload desktop-v0.7.0 "$env:RUNNER_TEMP/zhidou-demo-windows-x64.zip#知斗demo演示文件（Windows x64）" "$env:RUNNER_TEMP/SHA256SUMS.txt" "$env:RUNNER_TEMP/zhidou-product-plan.docx#知斗产品说明计划书（Word）" --repo $env:GITHUB_REPOSITORY --clobber
           if ($LASTEXITCODE -ne 0) { throw 'Could not upload release assets' }
+          gh release edit desktop-v0.7.0 --repo $env:GITHUB_REPOSITORY --notes-file desktop/release-notes.md
+          if ($LASTEXITCODE -ne 0) { throw 'Could not update release notes' }
+          $assetNames = gh release view desktop-v0.7.0 --repo $env:GITHUB_REPOSITORY --json assets --jq '.assets[].name'
+          if ($LASTEXITCODE -ne 0) { throw 'Could not verify release assets' }
+          foreach ($legacyName in @('demo.zip', 'default.docx')) {
+            if ($assetNames -contains $legacyName) {
+              gh release delete-asset desktop-v0.7.0 $legacyName --repo $env:GITHUB_REPOSITORY --yes
+              if ($LASTEXITCODE -ne 0) { throw 'Could not remove renamed legacy asset' }
+            }
+          }

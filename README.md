@@ -9,12 +9,12 @@
 ## 下载与试玩
 
 - [公开参赛仓库](https://github.com/ilovemiku520/zhidou-hackathon-demo)
-- [演示包发布页](https://github.com/ilovemiku520/zhidou-hackathon-demo/releases/tag/desktop-v0.7.0) · [知斗demo演示文件.zip](https://github.com/ilovemiku520/zhidou-hackathon-demo/releases/download/desktop-v0.7.0/知斗demo演示文件.zip)
+- [演示包发布页](https://github.com/ilovemiku520/zhidou-hackathon-demo/releases/tag/desktop-v0.7.0) · [知斗demo演示文件.zip](https://github.com/ilovemiku520/zhidou-hackathon-demo/releases/download/desktop-v0.7.0/zhidou-demo-windows-x64.zip)
 - [下载产品说明计划书 DOCX](https://github.com/ilovemiku520/zhidou-hackathon-demo/raw/refs/heads/main/docs/知斗产品说明计划书.docx) · [在线阅读说明书](docs/产品说明计划书.md)
 
 适用于 Windows 10／11 64位，使用 Chrome 或 Edge 浏览器显示界面。评委无需安装开发环境，也无需测试账号。
 
-1. 从发布页下载完成构建的“知斗demo演示文件.zip”。GitHub 自动提供的 Source code 压缩包用于查看源码，不包含试玩运行组件。
+1. 从发布页下载完成构建的“zhidou-demo-windows-x64.zip”。GitHub 自动提供的 Source code 压缩包用于查看源码，不包含试玩运行组件。
 2. 完整解压到可写目录，建议放在 D 盘；双击“开始试玩.cmd”，浏览器会自动打开本机演示页面。
 3. 领取每日任务奖励，体验鱼干批发和卡牌对战，再探索示例题单寻找暗黑看山。开发者工具可直接调整小鱼干；结束后在“试玩说明”点击“保存并退出”。
 
