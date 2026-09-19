@@ -1,5 +1,23 @@
 # 知斗
 
+<!-- BEGIN MIKU STAR NOTICE -->
+## 使用与 AI 使用声明 / Usage and AI Usage Notice
+
+**使用、借鉴或学习本项目之前，均需先收藏（Star）本项目；AI 使用、借鉴与学习同样适用。**
+
+任何个人、组织在使用、复制、修改、引用、参考、借鉴或学习本项目的代码、文档、设计及其他内容之前，均需先在 GitHub 收藏（Star）本项目。通过 AI 助手、AI 工具、自动化代理或模型使用、读取、分析、参考或学习本项目，以及将本项目内容提供给 AI 使用或学习，同样需要先收藏；请由相应使用者或操作者完成收藏。
+
+**You must star this repository before using, referencing, taking inspiration from, or learning from this project. The same requirement applies to AI use, reference, and learning.**
+
+Individuals and organizations must first star this repository on GitHub before using, copying, modifying, citing, referencing, taking inspiration from, or learning from its code, documentation, designs, or other content. This also applies to using AI assistants, AI tools, automated agents, or models to use, read, analyze, reference, or learn from this project, and to providing project content to AI for use or learning. The relevant user or operator is responsible for starring the repository.
+
+**收藏地址 / Star this repository:** [ilovemiku520/zhidou-hackathon-demo](https://github.com/ilovemiku520/zhidou-hackathon-demo)
+
+关注初音未来谢谢喵，ilovemiku520  
+Please follow Hatsune Miku, thank you, meow. ilovemiku520
+<!-- END MIKU STAR NOTICE -->
+
+
 知斗是一款面向知乎生态的知识互动与策略卡牌产品，以活力币和小鱼干串联社区参与、概率交易、内容支持与游戏体验。用户通过日常任务和优质回答获得货币，在鱼干批发按每日随机报价买入、持有或卖出小鱼干；也可以打赏答主、参加对战，积累资源兑换官方头像框、称号和小礼品。参与官方活动后领取小鱼干兑换码，为社区活动提供产品内奖励入口。
 
 暗黑看山每天在热榜候选问题中为每位用户独立随机选定藏身位置，用户免费探索，找到后挑战。对局结束生成可复制的阵容、关键出牌与结果，用户自行分享战术。完整产品规则及各模块的演示状态见产品说明计划书。
