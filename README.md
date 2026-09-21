@@ -11,7 +11,7 @@
 
 <p align="center"><a href="#download"><strong>下载试玩</strong></a> · <a href="#features">核心玩法</a> · <a href="#preview">界面预览</a> · <a href="#documentation">产品材料</a> · <a href="#development">源码构建</a></p>
 
-> **使用前先 Star：** 使用、参考、借鉴或学习本项目（含 AI 使用与学习）前，均需先收藏本项目。[完整声明](#usage-notice)。
+> **使用须经书面许可：** 保留所有权利；Star 不构成授权。完整条款见 [LICENSE](LICENSE)。
 
 知斗是一款面向知乎生态的**知识互动与策略卡牌产品原型**。以活力币和小鱼干串联日常参与、随机报价交易、卡牌对战、关卡探索与战报复盘，让产品规则成为可操作的体验。
 
@@ -141,22 +141,22 @@ npm test
 <details>
 <summary><strong>展开完整中英文使用与 AI 使用声明</strong></summary>
 
-<!-- BEGIN MIKU STAR NOTICE -->
-## 使用与 AI 使用声明 / Usage and AI Usage Notice
+<!-- BEGIN RIGHTS NOTICE -->
+## 版权与使用限制 / Copyright and use restrictions
 
-**使用、借鉴或学习本项目之前，均需先收藏（Star）本项目；AI 使用、借鉴与学习同样适用。**
+**保留所有权利。未经著作权人事先书面许可，不得使用、运行、复制、修改或分发本项目受保护的原创内容，包括个人、学习、研究、非商业和商业用途，以及依法需要许可的 AI 使用。Star 不构成授权。**
 
-任何个人、组织在使用、复制、修改、引用、参考、借鉴或学习本项目的代码、文档、设计及其他内容之前，均需先在 GitHub 收藏（Star）本项目。通过 AI 助手、AI 工具、自动化代理或模型使用、读取、分析、参考或学习本项目，以及将本项目内容提供给 AI 使用或学习，同样需要先收藏；请由相应使用者或操作者完成收藏。
+**All rights reserved. Prior written permission is required to use, run, copy, modify or distribute the project's protected original material, including personal, educational, research, non-commercial and commercial use, and AI use where permission is required by law. A GitHub Star does not grant permission.**
 
-**You must star this repository before using, referencing, taking inspiration from, or learning from this project. The same requirement applies to AI use, reference, and learning.**
+完整条款见 [LICENSE](LICENSE)。第三方内容仍适用其各自许可；此前已授予的许可、法定权利及 GitHub 平台条款项下权利不受影响。本文中的安装、运行及开发说明仅为技术说明，不构成使用授权。
 
-Individuals and organizations must first star this repository on GitHub before using, copying, modifying, citing, referencing, taking inspiration from, or learning from its code, documentation, designs, or other content. This also applies to using AI assistants, AI tools, automated agents, or models to use, read, analyze, reference, or learn from this project, and to providing project content to AI for use or learning. The relevant user or operator is responsible for starring the repository.
+See [LICENSE](LICENSE) for the full terms. Third-party licenses, previously granted permissions, statutory rights and rights under GitHub's Terms of Service remain unaffected. Setup, usage and development instructions are technical documentation, not permission to use the material.
 
-**收藏地址 / Star this repository:** [ilovemiku520/zhidou-hackathon-demo](https://github.com/ilovemiku520/zhidou-hackathon-demo)
+书面授权 / Permission requests: [ilovemiku520@outlook.com](mailto:ilovemiku520@outlook.com)
 
 关注初音未来谢谢喵，ilovemiku520  
 Please follow Hatsune Miku, thank you, meow. ilovemiku520
-<!-- END MIKU STAR NOTICE -->
+<!-- END RIGHTS NOTICE -->
 
 </details>
 
