@@ -1,6 +1,6 @@
 <p align="center"><img src="assets/readme-hero.svg" alt="知斗 ZHIDOU — 知识互动与策略卡牌" width="100%"></p>
 
-<p align="center"><strong>把知识互动，变成可以亲手体验的策略卡牌世界。</strong><br><sub>A knowledge-community and strategy-card prototype with a playable local demo.</sub></p>
+<p align="center"><strong>知斗是一款面向知乎生态的知识互动与策略卡牌原型。</strong><br><sub>A Zhihu hackathon prototype with a portable Windows demo for dual-currency trading and strategy card battles.</sub></p>
 
 <p align="center">
   <a href="https://github.com/ilovemiku520/zhidou-hackathon-demo/releases/tag/desktop-v0.7.0"><img src="https://img.shields.io/badge/Demo-v0.7.0-386b56?style=flat-square" alt="Demo version 0.7.0"></a>
@@ -13,16 +13,7 @@
 
 > **使用须经书面许可：** 保留所有权利。完整条款见 [LICENSE](LICENSE)。
 
-知斗是一款面向知乎生态的**知识互动与策略卡牌产品原型**。以活力币和小鱼干串联日常参与、随机报价交易、卡牌对战、关卡探索与战报复盘，让产品规则成为可操作的体验。
-
-**本仓库提供 Windows 免安装本地演示。** 免登录、无需云服务器、单份本地存档，核心玩法可离线体验。桌面工具是本次参赛的演示载体，产品定位与今后的接入形式不受此限定。
-
-<a id="preview"></a>
-## 界面预览
-
-![知斗 0.7.0 本地演示的实际界面](assets/demo-overview.jpg)
-
-<sub>截图来自公开仓库 0.7.0 源码的本地构建，展示本地试玩状态；试玩资产不对应真实财产或官方权益。</sub>
+签到赚取活力币，在每日随机报价中买卖小鱼干，再用随机搭档打牌、探索关卡并查看战报。**Windows 免安装演示**支持免登录和离线核心玩法，进度保存在本机的 SQLite 存档中。
 
 <a id="download"></a>
 ## 下载即玩
@@ -38,6 +29,13 @@
 适用于 **Windows 10 / 11 64 位**，建议使用 Chrome 或 Edge。演示包包含运行组件，无需安装 Node.js、Python 或浏览器扩展，也无需管理员权限或测试账号。
 
 > GitHub 自动生成的 **Source code** 压缩包仅含源码，不是免安装试玩包。安装、存档和排错详见[演示工具运行说明](desktop/README.md)。
+
+<a id="preview"></a>
+## 界面预览
+
+![知斗 0.7.0 本地演示的实际界面](assets/demo-overview.jpg)
+
+<sub>截图来自公开仓库 0.7.0 源码的本地构建，展示本地试玩状态；试玩资产不对应真实财产或官方权益。</sub>
 
 <a id="features"></a>
 ## 核心玩法
@@ -81,10 +79,7 @@
 | 钱包和财富榜 | 双币估值、分项收支、总资产前100名 | 本地资产与交易、对战收支可查看；多人榜待接入 |
 | 战报与复盘 | 可复制战术素材，知乎AI辅助复盘，用户自行分享 | 本地战报与统计可操作，未调用AI复盘 |
 
-产品说明详细介绍了打赏、官方活动和礼品设计，未接入的部分保留为完整产品规划。单机演示免登录，可直接调币并保存进度；联网时可读活动官方知识，离线有原创玩法读本。桌面运行方式不改变知斗的产品定位。
-
 </details>
-
 
 <a id="documentation"></a>
 ## 产品材料
